@@ -12,15 +12,17 @@ class Window(QDialog):
         self.left = 500
         self.width = 400
         self.height = 300
+        self.iconName = "home.png"
+        
         self.InitWindow()
 
 def InitWindow(self):
-        self.setWindowIcon(QtGui.QIcon("icon.png"))
+        self.setWindowIcon(QtGui.QIcon(self.iconName))
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
         vbox = QVBoxLayout()
         labelImage = QLabel(self)
-        pixmap = QPixmap("pic2.jpg")
+        pixmap = QPixmap("nuvem.jpg")
         labelImage.setPixmap(pixmap)
         vbox.addWidget(labelImage)
         self.setLayout(vbox)
