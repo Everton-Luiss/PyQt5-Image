@@ -1,18 +1,17 @@
+from PyQt5.QtWidgets import QApplication, QDialog, QLabel, QLineEdit, QPushButton, QToolTip
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QApplication, QDialog, QVBoxLayout, QLabel, QMainWindow, QLineEdit, QPushButton, QToolTip
-import sys
 from PyQt5.QtGui import QPixmap
-
+import sys
 
 class Window(QDialog):
     def __init__(self): #método construtor
         super().__init__()
-        self.title = "PyQt5 Adding Image To Label"
+        self.title = "Registration"
         self.top = 100
         self.left = 100
         self.width = 680
         self.height = 550
-        self.iconName = "home.png"
+        #self.iconName = "home.png"
         #self.setStyleSheet("background-color:black;"
 
         self.textBox = QLineEdit(self)
@@ -34,12 +33,6 @@ class Window(QDialog):
         self.textBox_5 = QLineEdit(self)
         self.textBox_5.move(445, 397)
         self.textBox_5.resize(230, 20)
-
-        Button1 = QPushButton('Submit', self)
-        Button1.move(340, 470)
-        Button1.resize(190, 40)
-        #Button1.setStyleSheet('QPushButton {background-collor: #0FB328; font: normal; font-size: 20px}')
-        #Button1.clicked.connect(self.Button1_click)
 
         self.label_1 = QLabel(self)
         self.label_1.setText("Registration Info")
@@ -77,6 +70,12 @@ class Window(QDialog):
         self.label_6.setStyleSheet('QLabel {font: normal; font-size:20px; color: "white"}')
         self.label_6.resize(170,20)
 
+        button1 = QPushButton('Submit', self)
+        button1.move(340, 470)
+        button1.resize(190, 40)
+        button1.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal; font-size: 20px}')
+        #button1.clicked.connect(self.button1_click)
+
         self.InitWindow()
 
     def InitWindow(self):
@@ -89,26 +88,9 @@ class Window(QDialog):
         self.setGeometry(self.top, self.left, self.width, self.height)
         self.setStyleSheet("QDialog {background: 'blach';}");
 
-    #def Button1_click(self):
+    #def button1_click(self):
      #   print('O botão submit foi clicado')
 
-        #vbox = QVBoxLayout()
-
-       # labelImage = QLabel(self)
-        #pixmap = QPixmap("nuvem2.png")
-        #labelImage.setPixmap(pixmap)
-        #self.setGeometry(60,50, 1000,400)
-        #vbox.addWidget(labelImage)
-        
-        #label = QLabel("This Is PyQt5 Labels")
-        #vbox.addWidget(label)
-        #label2 = QLabel("This Is PyQt5 GUI Applicaition Development, Hello")
-        #label2.setFont(QtGui.QFont("Sanserif", 20))
-        #abel2.setStyleSheet('color:red')
-        #vbox.addWidget(label2)
-
-        
-        #self.setLayout(vbox)
         self.show()
  
  
