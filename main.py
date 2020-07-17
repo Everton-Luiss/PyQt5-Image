@@ -72,31 +72,24 @@ class Window(QDialog):
         self.label_6.setStyleSheet('QLabel {font: normal; font-size:20px; color: "white"}')
         self.label_6.resize(170,20)
 
-        #button1 = QPushButton('Submit', self)
-        #button1.move(340, 470)
-        #button1.resize(190, 40)
-        #button1.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal; font-size: 20px}')
-        
-
         self.InitWindow()
-
     def InitWindow(self):
-        self.button = QPushButton('Submit', self)
-        self.button.move(340, 470)
-        self.button.resize(190, 40)
-        self.button.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal;  font-size:20px; color: "white"}')
-        #self.button.clicked.connect(self.button_click)
+        self.button1 = QPushButton('Submit', self)
+        self.button1.move(340, 470)
+        self.button1.resize(190, 40)
+        self.button1.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal;  font-size:20px; color: "black"}')
+        self.button1.clicked.connect(self.Submit)   
 
         self.nuvem = QLabel(self)
         self.nuvem.setPixmap(QPixmap('nuvem2.png'))
-        #self.nuvem.resize(400,200)
-        
         self.setWindowIcon(QtGui.QIcon("icon.png"))
         self.setWindowTitle(self.title)
         self.setGeometry(self.top, self.left, self.width, self.height)
         self.setStyleSheet("QDialog {background: 'blach';}");
-
-    #def button_click(self):
+        self.show()
+    
+    def Submit(self):
+       print("O botão foi clicado")
      #   linha1 = textBox.text()#lê o que foi digitado no formulário
       #  print('Name: ', linha1)
        # linha2 = textBox_2.text()
@@ -108,7 +101,7 @@ class Window(QDialog):
        # linha5 = textBox_5.text()
         #print('Phone: ', linha5)
 
-        self.show()
+        
     
      
 App = QApplication(sys.argv)
