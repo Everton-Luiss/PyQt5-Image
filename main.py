@@ -2,7 +2,6 @@ from PyQt5.QtWidgets import QApplication, QDialog, QLabel, QLineEdit, QPushButto
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5.QtGui import QPixmap
-import MySQLdb as mdb
 import sys
 
 class Window(QDialog):
@@ -94,33 +93,7 @@ class Window(QDialog):
      #   print('O botão submit foi clicado')
 
         self.show()
-    def funcao_principal():#função que será acionada pelo botão
-        linha1 = textBox.text()
-        print('Name', linha1)
-        linha2 = textBox_2.text()
-        print('Birthdate', linha2)
-        linha3 = textBox_3.text()
-        print('Gender', linha3)
-        linha4 = textBox_4.text()
-        print('Email', linha4)
-        linha5 = textBox_5.text()
-        print('Phone', linha5)
-
-        cursor = banco.cursor()#criamos um cursor e usamos nossa instancia do banco -> variavel criada fora da função principal
-        comando_sql = 'insert into produtos(Name, Birthdate, Gender, Email, Phone) values(%s, %s, %s, %s, %s)'
-        dados = (str(linha1), str(linha2), str(linha3), str(linha4), str(linha5))
-        cursor.execute(comando_sql, dados)
-        banco.commit()
-
-        linha1 = textBox.setText("")
-        linha2 = textBox_2.setText("")
-        linha3 = textBox_3.setText("")
-        linha4 = textBox_4.setText("")
-        linha5 = textBox_5.setText("")
-
-    app=QtWidgets.QApplication([])
-
-    button1.clicked.connect(funcao_principal)
+    
      
 App = QApplication(sys.argv)
 window = Window()
