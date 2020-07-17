@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QApplication, QDialog, QLabel, QLineEdit, QPushButto
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5.QtGui import QPixmap
+#from MySQLdb import _mysql
 import sys
 
 class Window(QDialog):
@@ -71,15 +72,19 @@ class Window(QDialog):
         self.label_6.setStyleSheet('QLabel {font: normal; font-size:20px; color: "white"}')
         self.label_6.resize(170,20)
 
-        button1 = QPushButton('Submit', self)
-        button1.move(340, 470)
-        button1.resize(190, 40)
-        button1.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal; font-size: 20px}')
-        #button1.clicked.connect(self.button1_click)
+        #button1 = QPushButton('Submit', self)
+        #button1.move(340, 470)
+        #button1.resize(190, 40)
+        #button1.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal; font-size: 20px}')
+        
 
         self.InitWindow()
 
     def InitWindow(self):
+        self.button = QPushButton('Submit', self)
+        self.button .setGeometry(100, 100, 200, 50)
+        self.button.clicked.connect()
+
         self.nuvem = QLabel(self)
         self.nuvem.setPixmap(QPixmap('nuvem2.png'))
         #self.nuvem.resize(400,200)
