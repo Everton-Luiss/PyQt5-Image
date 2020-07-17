@@ -82,8 +82,10 @@ class Window(QDialog):
 
     def InitWindow(self):
         self.button = QPushButton('Submit', self)
-        self.button .setGeometry(100, 100, 200, 50)
-        self.button.clicked.connect()
+        self.button.move(340, 470)
+        self.button.resize(190, 40)
+        self.button.setStyleSheet('QPushButton {background-color: #C3EADD; font: normal;  font-size:20px; color: "white"}')
+        #self.button.clicked.connect(self.button_click)
 
         self.nuvem = QLabel(self)
         self.nuvem.setPixmap(QPixmap('nuvem2.png'))
@@ -94,8 +96,17 @@ class Window(QDialog):
         self.setGeometry(self.top, self.left, self.width, self.height)
         self.setStyleSheet("QDialog {background: 'blach';}");
 
-    #def button1_click(self):
-     #   print('O botão submit foi clicado')
+    #def button_click(self):
+     #   linha1 = textBox.text()#lê o que foi digitado no formulário
+      #  print('Name: ', linha1)
+       # linha2 = textBox_2.text()
+        #print('Birthdate: ', linha2)
+        #linha3 = textBox_3.text()
+    #    print('Gender: ', linha3)
+     #   linha4 = textBox_4.text()
+      #  print('Email: ', linha4)
+       # linha5 = textBox_5.text()
+        #print('Phone: ', linha5)
 
         self.show()
     
