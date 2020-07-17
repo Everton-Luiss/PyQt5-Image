@@ -100,8 +100,7 @@ class Window(QDialog):
         linha5 = self.textBox_5.text()
         print('Phone: ', linha5)
 
-        cursor = banco.cursor()#criamos um cursor e usamos nossa instancia do banco -> variavel criada fora da função principal
-        comando_sql = 'insert into produtos(Name, Birthdate, Gender, Email, Phone) values(%s, %s, %s, %s, %s)'
+        comando_sql = 'insert into pessoas(Name, Birthdate, Gender, Email, Phone) values(%s, %s, %s, %s, %s)'
         dados = (str(linha1), str(linha2), str(linha3), str(linha4), str(linha5))
         cursor.execute(comando_sql, dados)
         banco.commit()
