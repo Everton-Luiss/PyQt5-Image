@@ -89,17 +89,28 @@ class Window(QDialog):
         self.show()
     
     def Submit(self):
-       print("O botão foi clicado")
-     #   linha1 = textBox.text()#lê o que foi digitado no formulário
-      #  print('Name: ', linha1)
-       # linha2 = textBox_2.text()
-        #print('Birthdate: ', linha2)
-        #linha3 = textBox_3.text()
-    #    print('Gender: ', linha3)
-     #   linha4 = textBox_4.text()
-      #  print('Email: ', linha4)
-       # linha5 = textBox_5.text()
-        #print('Phone: ', linha5)
+        linha1 = self.textBox.text()#lê o que foi digitado no formulário
+        print('Name: ', linha1)
+        linha2 = self.textBox_2.text()
+        print('Birthdate: ', linha2)
+        linha3 = self.textBox_3.text()
+        print('Gender: ', linha3)
+        linha4 = self.textBox_4.text()
+        print('Email: ', linha4)
+        linha5 = self.textBox_5.text()
+        print('Phone: ', linha5)
+
+        cursor = banco.cursor()#criamos um cursor e usamos nossa instancia do banco -> variavel criada fora da função principal
+        comando_sql = 'insert into produtos(Name, Birthdate, Gender, Email, Phone) values(%s, %s, %s, %s, %s)'
+        dados = (str(linha1), str(linha2), str(linha3), str(linha4), str(linha5))
+        cursor.execute(comando_sql, dados)
+        banco.commit()
+
+        linha1 = self.textBox.setText("")
+        linha2 = self.textBox_2.setText("")
+        linha3 = self.textBox_3.setText("")
+        linha4 = self.textBox_4.setText("")
+        linha5 = self.textBox_5.setText("")
 
         
     
